@@ -1,0 +1,25 @@
+body{color: blue}
+
+/* mobile */
+@media screen and (max-width:600px) {
+    .phone{color:red}
+}
+
+/* tablet */
+@media screen and (min-width:600px) and (max-width:992px) {
+    .tablet{color:red}
+}
+
+/* desktop */
+@media screen and (min-width:992px) {
+    .desktop{color:red}
+}
+
+/* orientation */
+/* @media screen and (orientation:landscape) {
+    body{color:green}
+}
+
+@media screen and (orientation:portrait) {
+    body{color:orange}
+} */
