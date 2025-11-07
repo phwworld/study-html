@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+html {
+  font-size: 62.5%; /* 1rem -> 10px */
+}
+
+body {
+  font-family: '맑은 고딕', 'Malgun Gothic';
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.size1 {
+  
+}
+.size1_1 {
+  font-size: 20px;
+}
+
+/* Tablet portrait & landscape */
+@media all and (min-width:767px) and (max-width:1023px) {
+  
+}
+
+/* Mobile portrait & landscape */
+@media all and (max-width:767px) {
+  
+}
+
+/* Mobile portrait */
+@media all and (max-width:479px) {
+  
+}
