@@ -58,13 +58,6 @@ body {
       background-color: var(--blue);
     }
   }
-  
-  @media (width < 767px) {
-    & li {
-      background-color: red;
-    }
-  }
-  
   .other & {
     margin-top: 20px;
     .active {
@@ -74,7 +67,6 @@ body {
       }
     }
   }
-  
   &.type {
     margin-top: 20px;
     .active {
@@ -83,6 +75,11 @@ body {
       &::after {
         background-color: var(--yellow);
       }
+    }
+  }
+  @media (width < 767px) {
+    & li {
+      background-color: red;
     }
   }
 }
