@@ -1,50 +1,58 @@
-* {padding: 0;margin: 0;}
-    section ~ section {margin-top: 30px;padding-top: 20px;border-top: 2px dashed #000;}
-    section:last-child {margin-bottom: 30px;}
-    .where .code {
-      :where(h1, h2, h3) {
-        color: blue;
-      }
-      :where(.important, .highlight) {
-          background-color: yellow;
-      }
-    }
+* {padding: 0;margin: 0;line-height: 1.5;}
+li {list-style: none;}
+body {padding: 30px;}
+section ~ section {margin-top: 30px;padding-top: 20px;border-top: 10px dashed #000;}
+section:last-child {margin-bottom: 30px;}
+:where(section h1, section > div) {margin-bottom: 10px;}
+.where .code {
+  :where(h1, h2, h3) {
+    color: blue;
+  }
+  :where(.important, .highlight) {
+      background-color: yellow;
+  }
+}
 
-    .is .code {
-      /* :is() 셀렉터 */
-      :is(.highlight, .important) {
-          color: red;
-      }
+.is .code {
+  /* :is() 셀렉터 */
+  :is(.highlight, .important) {
+      color: red;
+  }
 
-      /* :where() 셀렉터 */
-      :where(.highlight, .important) {
-          color: blue;
-      }
+  /* :where() 셀렉터 */
+  :where(.highlight, .important) {
+      color: blue;
+  }
 
-      p {
-          color: black;
-      }
-    }
+  p {
+      color: black;
+  }
+}
 
-    .not .code {
-      .list li:not(:first-child, .list04) {
-        background-color: orange;
-      }
-    }
+.not .code {
+  .list li:not(:first-child, .list04) {
+    background-color: orange;
+  }
+}
 
-    .has .code {
-      .parent:has(.special) {
-          background-color: yellow;
-      }
+.has .code {
+  .parent:has(.special) {
+      background-color: yellow;
+  }
 
-      .menu {
-        height: 10px;
-        border: 1px solid skyblue;
-      }
-      .depth {
-        display: none;
-      }
-      .menu > a:has(> .on) + .depth {
-        display: block;
-      }
-    }
+  > ul {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 4px solid red;
+  }
+
+  .menu {
+    border: 1px solid skyblue;
+  }
+  .depth {
+    display: none;
+  }
+  .menu > a:has(> .on) + .depth {
+    display: block;
+  }
+}
