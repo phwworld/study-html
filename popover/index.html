@@ -16,24 +16,27 @@
         button {
             cursor: pointer;
         }
-        ::backdrop {
-            background: rgba(0,0,0,.7);
-            z-index: 100;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-        :popover-open {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        
         [popover] {
             position: relative;
             border-radius: 10px;
             border-width: 0;
+
+            &::backdrop {
+                background: rgba(0,0,0,.7);
+                z-index: 100;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            &:popover-open {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
             .modal-close {
                 position: absolute;
@@ -51,12 +54,12 @@
     <button type="button" popovertarget="popup1">팝업1 열기</button>
     <button type="button" popovertarget="popup2">팝업2 열기</button>
 
-    <div class="modal" id="popup1" popover="manual">
+    <div class="modal" id="popup1" popover>
         <div>팝업1 cont</div>
         <button type="button" class="modal-close" popovertarget="popup1" popovertargetaction="hide">팝업 닫기</button>
     </div>
 
-    <div class="modal" id="popup2" popover="manual">
+    <div class="modal" id="popup2" popover>
         <div>팝업2 cont</div>
         <button type="button" class="modal-close" popovertarget="popup2" popovertargetaction="hide">팝업 닫기</button>
     </div>

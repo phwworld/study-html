@@ -13,6 +13,7 @@
         body {
             padding: 30px;
         }
+        
         dialog::backdrop {
             background: rgba(0,0,0,.5);
         }
@@ -20,12 +21,6 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
-        dialog .dialog-cont {
-            display: none;
-            &.act {
-                display: block;
-            }
         }
     </style>
 </head>
@@ -44,6 +39,7 @@
     </dialog>
 
     <script>
+        const dialog = document.querySelectorAll('dialog');
         const popOpen = document.querySelectorAll('.modal-open');
         const popClose = document.querySelectorAll('.modal-close');
 
@@ -58,6 +54,14 @@
             closeBtn.addEventListener('click', (e) => {
                 const actCont = e.target.closest('dialog');
                 actCont.close();
+            });
+        });
+
+        dialog.forEach((popup, index) => {
+            popup.addEventListener('click' , (e) => {
+                if(e.target === popup) {
+                    dialog[index].close();
+                }
             });
         });
     </script>
