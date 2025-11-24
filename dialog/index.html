@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dialog</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 30px;
+        }
+        dialog::backdrop {
+            background: rgba(0,0,0,.5);
+        }
+        dialog {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        dialog .dialog-cont {
+            display: none;
+            &.act {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="modal-open" data-modalname="modal1">pop1 open</button>
+    <button type="button" class="modal-open" data-modalname="modal2">pop2 open</button>
+    
+    <dialog id="modal1">
+        <div>pop1 cont</div>
+        <button type="button" class="modal-close" autofocus>pop close</button>
+    </dialog>
+
+    <dialog id="modal2">
+        <div>pop2 cont</div>
+        <button type="button" class="modal-close" autofocus>pop close</button>
+    </dialog>
+
+    <script>
+        const popOpen = document.querySelectorAll('.modal-open');
+        const popClose = document.querySelectorAll('.modal-close');
+
+        console.log(popOpen, popClose);
+
+        popOpen.forEach((openBtn) => {
+            openBtn.addEventListener('click', (e) => {
+                const modalName = e.target.dataset.modalname;
+                document.querySelector(`#${modalName}`).showModal();
+            });
+        });
+
+        popClose.forEach((closeBtn) => {
+            closeBtn.addEventListener('click', (e) => {
+                const actCont = e.target.closest('dialog');
+                actCont.close();
+            });
+        });
+    </script>
+</body>
+</html>
