@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popover</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        ::backdrop {
+            background: rgba(0,0,0,.7);
+        }
+        :popover-open {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        [popover] {
+            position: relative;
+            padding: 50px;
+            border-radius: 10px;
+            border-width: 0;
+
+            .modal-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button type="button" popovertarget="popup1" popovertargetaction="show">팝업1 열기</button>
+    <button type="button" popovertarget="popup2" popovertargetaction="show">팝업2 열기</button>
+
+    <div class="modal" id="popup1" popover>
+        <div>팝업1</div>
+        <button type="button" class="modal-close" popovertarget="popup1" popovertargetaction="hide">팝업 닫기</button>
+    </div>
+
+    <div class="modal" id="popup2" popover="manual">
+        <div>팝업2</div>
+        <button type="button" class="modal-close" popovertarget="popup2" popovertargetaction="hide">팝업 닫기</button>
+    </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 * {padding: 0;margin: 0;line-height: 1.5;}
 li {list-style: none;}
 body {padding: 30px;}
-section ~ section {margin-top: 30px;padding-top: 20px;border-top: 10px dashed #000;}
+section ~ section {margin-top: 30px;padding-top: 20px;border-top: 10px double #000;}
 section:last-child {margin-bottom: 30px;}
 :where(section h1, section > div) {margin-bottom: 10px;}
 .where .code {
@@ -18,23 +18,26 @@ section:last-child {margin-bottom: 30px;}
   :is(.highlight, .important) {
       color: red;
   }
+  
+  p {
+      color: black;
+  }
 
   /* :where() 셀렉터 */
   :where(.highlight, .important) {
       color: blue;
   }
 
-  p {
-      color: black;
-  }
 }
 
+/* :not() 셀렉터 */
 .not .code {
   .list li:not(:first-child, .list04) {
     background-color: orange;
   }
 }
 
+/* :has() 셀렉터 */
 .has .code {
   .parent:has(.special) {
       background-color: yellow;
