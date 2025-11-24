@@ -47,8 +47,6 @@
         const popOpen = document.querySelectorAll('.modal-open');
         const popClose = document.querySelectorAll('.modal-close');
 
-        console.log(popOpen, popClose);
-
         popOpen.forEach((openBtn) => {
             openBtn.addEventListener('click', (e) => {
                 const modalName = e.target.dataset.modalname;
