@@ -71,7 +71,7 @@
         dialog.forEach((popup, index) => {
             popup.addEventListener('click' , (e) => {
                 if(e.target === popup) {
-                    dialog[index].close();
+                    popup.close();
                 }
             });
         });
